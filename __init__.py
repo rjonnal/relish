@@ -12,6 +12,13 @@ def fix_filename(filename,cache_directory):
 
     return filename
 
+def url_to_tag(url):
+    temp = url.replace('/','_')
+    temp = temp.replace(':','_')
+    while temp[-1]=='_':
+        temp = temp[:-1]
+    return temp
+
 def save(filename,obj,cache_directory=cache_directory_default,protocol=pickle.HIGHEST_PROTOCOL):
     
     try:
